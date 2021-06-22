@@ -52,7 +52,7 @@
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="svR-RP-hFx"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="jfP-RZ-j0N" kind="show" id="fb0-qg-lpy"/>
+                        <segue destination="jfP-RZ-j0N" kind="show" identifier="effectsSegue" id="fb0-qg-lpy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -152,6 +152,7 @@
                         <outlet property="collectionView" destination="ybB-Sx-n5f" id="NZk-KO-DlF"/>
                         <outlet property="loading" destination="hhz-tU-YcX" id="mR4-lB-U4P"/>
                         <outlet property="selectedImage" destination="TwA-kD-KZF" id="5p5-p6-zKA"/>
+                        <outlet property="viewOverrided" destination="nf9-MY-ga2" id="yav-0A-UHh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Qy-Ik-90j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

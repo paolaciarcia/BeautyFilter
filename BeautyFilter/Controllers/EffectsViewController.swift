@@ -13,11 +13,18 @@ class EffectsViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     
+    @IBOutlet weak var viewOverrided: UIView!
+    var image: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        selectedImage.image = image
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        
     }
     
     @IBAction func done(_ sender: UIBarButtonItem) {

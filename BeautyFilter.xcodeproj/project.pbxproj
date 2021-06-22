@@ -62,15 +62,23 @@
 			children = (
 				602B48A92682545400E7A54C /* AppDelegate.swift */,
 				602B48AB2682545400E7A54C /* SceneDelegate.swift */,
-				602B48AD2682545400E7A54C /* EntryViewController.swift */,
-				602B48BF268261C400E7A54C /* EffectsViewController.swift */,
+				602B48C5268267C200E7A54C /* Controllers */,
 				602B48AF2682545400E7A54C /* Main.storyboard */,
-				602B48C22682620F00E7A54C /* SaveImageViewController.swift */,
 				602B48B22682545F00E7A54C /* Assets.xcassets */,
 				602B48B42682545F00E7A54C /* LaunchScreen.storyboard */,
 				602B48B72682545F00E7A54C /* Info.plist */,
 			);
 			path = BeautyFilter;
+			sourceTree = "<group>";
+		};
+		602B48C5268267C200E7A54C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				602B48AD2682545400E7A54C /* EntryViewController.swift */,
+				602B48BF268261C400E7A54C /* EffectsViewController.swift */,
+				602B48C22682620F00E7A54C /* SaveImageViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
