@@ -10,23 +10,28 @@ import Photos
 
 class SaveImageViewController: UIViewController {
     
+    //MARK: - IBOutlets
+
     @IBOutlet weak var selectedImage: UIImageView!
-    
     @IBOutlet weak var savePhoto: UIButton!
-    
     @IBOutlet weak var restart: UIButton!
     
+    //MARK: - Properties
+
     var image: UIImage?
+    
+    //MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         selectedImage.image = image
         selectedImage.layer.cornerRadius = 10
         savePhoto.layer.cornerRadius = 10
         restart.layer.cornerRadius = 10
     }
     
+    //MARK: - IBAcitons
+
     @IBAction func savePressed(_ sender: UIButton) {
         //solicita ao usuário que de acesso ao album de fotos
         PHPhotoLibrary.requestAuthorization { (status) in
@@ -43,6 +48,8 @@ class SaveImageViewController: UIViewController {
         navigationController?.popToRootViewController(animated: true)
     }
     
+    //MARK: - Methods
+
     func saveImage() {
         PHPhotoLibrary.shared().performChanges {
             //será feita uma requisição para inserir a foto no album de fotos

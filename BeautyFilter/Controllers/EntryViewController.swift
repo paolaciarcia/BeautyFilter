@@ -8,22 +8,22 @@
 import UIKit
 
 class EntryViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    
+    //MARK: - Lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    
+    //MARK: - IBActions
 
     @IBAction func buttonPressed(_ sender: UIButton) {
         
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
-
+        
         let alertController = UIAlertController(
             title: "Escolha uma imagem",
             message: "De onde você quer escolher sua imagem?",
@@ -63,12 +63,15 @@ class EntryViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    //MARK: - Prepare segue
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let effectsVC = segue.destination as? EffectsViewController
         effectsVC?.image = sender as? UIImage
     }
 }
 
+//MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
 
 extension EntryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

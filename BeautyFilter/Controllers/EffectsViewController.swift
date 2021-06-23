@@ -10,11 +10,15 @@ import CoreImage
 
 class EffectsViewController: UIViewController {
     
+    //MARK: - IBOutlets
+
     @IBOutlet weak var selectedImage: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var viewOverrided: UIView!
     
+    //MARK: - Properties
+
     var image: UIImage?
     
     lazy var filterManager: FilterManager = {
@@ -32,7 +36,9 @@ class EffectsViewController: UIViewController {
         "vignette",
         "noir"
     ]
-    
+   
+    //MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedImage.image = image
@@ -45,14 +51,20 @@ class EffectsViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    //MARK: - IBActions
+
     @IBAction func done(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "showImage", sender: self)
     }
     
+    //MARK: - Methods
+
     func showLoading(_ show: Bool) {
         viewOverrided.isHidden = !show
     }
     
+    //MARK: - Prepare segue
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let saveImageVC = segue.destination as? SaveImageViewController
         saveImageVC?.image = selectedImage.image
