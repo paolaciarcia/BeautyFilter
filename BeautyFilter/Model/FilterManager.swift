@@ -12,12 +12,12 @@ class FilterManager {
     
     let originalImage: UIImage
     //região que será aplicada os efeitos do CoreImage
-    let context = CIContext()
+    let context = CIContext(options: nil)
     
     let filterNames = [
         "CIComicEffect",
         "CISepiaTone",
-        "CICMYHalftone",
+        "CICMYKHalftone",
         "CICrystallize",
         "CIVignette",
         "CIPhotoEffectNoir"
@@ -28,7 +28,7 @@ class FilterManager {
     }
     
     func applyFilter(type: FilterType) -> UIImage {
-        let ciImage = CIImage(image: originalImage)
+        let ciImage = CIImage(image: originalImage)!
         let filter = CIFilter(name: filterNames[type.rawValue])!
         filter.setValue(ciImage, forKey: kCIInputImageKey)
         

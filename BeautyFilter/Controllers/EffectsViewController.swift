@@ -47,6 +47,10 @@ class EffectsViewController: UIViewController {
     
     @IBAction func done(_ sender: UIBarButtonItem) {
     }
+    
+    func showLoading(_ show: Bool) {
+        viewOverrided.isHidden = !show
+    }
 }
 //MARK: - UICollectionViewDataSource, UICollectionViewDelegate
 
@@ -57,15 +61,22 @@ extension EffectsViewController: UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? EffectCollectionViewCell
-        cell?.imageViewEffect.image = UIImage(named: filterImageNames[indexPath.row])
+        guard let currentCell = cell else { fatalError() }
+        currentCell.imageViewEffect.image = UIImage(named: filterImageNames[indexPath.row])
         
-        return cell
+        return currentCell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let filter = FilterType(rawValue: indexPath.row) {
-            let filteredImage = self.filterManager.applyFilter(type: filter)
-            selectedImage.image = filteredImage
+            showLoading(true)
+            DispatchQueue.global(qos: .userInitiated).async {
+                let filteredImage = self.filterManager.applyFilter(type: filter)
+                DispatchQueue.main.async {
+                    self.selectedImage.image = filteredImage
+                    self.showLoading(false)
+                }
+            }
         }
     }
 }
