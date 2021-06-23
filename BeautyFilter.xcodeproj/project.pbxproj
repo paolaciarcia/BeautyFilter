@@ -17,6 +17,7 @@
 		602B48C32682620F00E7A54C /* SaveImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602B48C22682620F00E7A54C /* SaveImageViewController.swift */; };
 		602B48CB26827BD200E7A54C /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602B48CA26827BD200E7A54C /* FilterManager.swift */; };
 		602B48CE26827C5200E7A54C /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602B48CD26827C5200E7A54C /* FilterType.swift */; };
+		602B48D92683754B00E7A54C /* EffectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602B48D82683754B00E7A54C /* EffectCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		602B48C22682620F00E7A54C /* SaveImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveImageViewController.swift; sourceTree = "<group>"; };
 		602B48CA26827BD200E7A54C /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
 		602B48CD26827C5200E7A54C /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
+		602B48D82683754B00E7A54C /* EffectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				602B48CA26827BD200E7A54C /* FilterManager.swift */,
 				602B48CD26827C5200E7A54C /* FilterType.swift */,
+				602B48D82683754B00E7A54C /* EffectCollectionViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				602B48AE2682545400E7A54C /* EntryViewController.swift in Sources */,
 				602B48C0268261C400E7A54C /* EffectsViewController.swift in Sources */,
 				602B48AA2682545400E7A54C /* AppDelegate.swift in Sources */,
+				602B48D92683754B00E7A54C /* EffectCollectionViewCell.swift in Sources */,
 				602B48AC2682545400E7A54C /* SceneDelegate.swift in Sources */,
 				602B48CB26827BD200E7A54C /* FilterManager.swift in Sources */,
 			);

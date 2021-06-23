@@ -23,25 +23,49 @@ class EffectsViewController: UIViewController {
             
             return filterManager
     }()
-
+    
+    let filterImageNames = [
+        "comic",
+        "sepia",
+        "halftone",
+        "crystallize",
+        "vignette",
+        "noir"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedImage.image = image
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        selectedImage.image = filterManager.applyFilter(type: FilterType(rawValue: 5)!)
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
-        
     }
     
     @IBAction func done(_ sender: UIBarButtonItem) {
     }
+}
+//MARK: - UICollectionViewDataSource, UICollectionViewDelegate
+
+extension EffectsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return filterManager.filterNames.count
+    }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? EffectCollectionViewCell
+        cell?.imageViewEffect.image = UIImage(named: filterImageNames[indexPath.row])
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let filter = FilterType(rawValue: indexPath.row) {
+            let filteredImage = self.filterManager.applyFilter(type: filter)
+            selectedImage.image = filteredImage
+        }
+    }
 }

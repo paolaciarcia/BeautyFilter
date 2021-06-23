@@ -86,7 +86,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="ReK-Ue-oYv">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="ReK-Ue-oYv" customClass="EffectCollectionViewCell" customModule="BeautyFilter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8Dz-PB-je9">
@@ -105,6 +105,9 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="70" height="90"/>
+                                        <connections>
+                                            <outlet property="imageViewEffect" destination="fMH-hS-joW" id="Zld-IT-Khv"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
