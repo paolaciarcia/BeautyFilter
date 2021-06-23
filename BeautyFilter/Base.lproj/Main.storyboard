@@ -178,16 +178,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Zi-rj-IC1">
-                                <rect key="frame" x="20" y="108" width="374" height="619"/>
+                                <rect key="frame" x="20" y="108" width="374" height="589"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="JAj-cI-IYL">
-                                <rect key="frame" x="20" y="747" width="374" height="95"/>
+                                <rect key="frame" x="20" y="717" width="374" height="125"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0w-Ib-3Tr">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
                                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="0.46619272232055664" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="GwY-vS-076"/>
+                                            <constraint firstAttribute="height" constant="55" id="GwY-vS-076"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <state key="normal" title="Salvar no Álbum">
@@ -198,7 +198,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogD-Az-MCe">
-                                        <rect key="frame" x="0.0" y="55" width="374" height="40"/>
+                                        <rect key="frame" x="0.0" y="70" width="374" height="55"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <state key="normal" title="Começar novamente">
@@ -232,6 +232,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Fzp-4w-Yeg"/>
                     <connections>
+                        <outlet property="restart" destination="ogD-Az-MCe" id="BMS-xy-FlW"/>
+                        <outlet property="savePhoto" destination="N0w-Ib-3Tr" id="qZX-T7-2vy"/>
                         <outlet property="selectedImage" destination="0Zi-rj-IC1" id="uph-g9-BGb"/>
                     </connections>
                 </viewController>

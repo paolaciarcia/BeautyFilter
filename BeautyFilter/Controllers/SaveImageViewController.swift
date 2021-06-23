@@ -11,14 +11,20 @@ import Photos
 class SaveImageViewController: UIViewController {
     
     @IBOutlet weak var selectedImage: UIImageView!
-
-    var image: UIImage?
     
+    @IBOutlet weak var savePhoto: UIButton!
+    
+    @IBOutlet weak var restart: UIButton!
+    
+    var image: UIImage?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         selectedImage.image = image
         selectedImage.layer.cornerRadius = 10
+        savePhoto.layer.cornerRadius = 10
+        restart.layer.cornerRadius = 10
     }
     
     @IBAction func savePressed(_ sender: UIButton) {
