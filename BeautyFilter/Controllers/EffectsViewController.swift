@@ -46,10 +46,16 @@ class EffectsViewController: UIViewController {
     }
     
     @IBAction func done(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "showImage", sender: self)
     }
     
     func showLoading(_ show: Bool) {
         viewOverrided.isHidden = !show
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let saveImageVC = segue.destination as? SaveImageViewController
+        saveImageVC?.image = selectedImage.image
     }
 }
 //MARK: - UICollectionViewDataSource, UICollectionViewDelegate

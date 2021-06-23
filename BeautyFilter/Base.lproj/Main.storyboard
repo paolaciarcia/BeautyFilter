@@ -27,24 +27,28 @@
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xgA-Cy-MAe"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escolha ou tire sua foto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPz-48-S2b">
-                                <rect key="frame" x="100.5" y="548" width="213" height="24"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tq0-sp-2eR">
+                                <rect key="frame" x="100.5" y="548" width="213" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <color key="textColor" systemColor="systemGreenColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Escolha ou tire sua foto">
+                                    <color key="titleColor" systemColor="systemGreenColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n2w-K4-X1B"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Y3H-jh-cAK" secondAttribute="bottom" id="8ba-gk-Eem"/>
-                            <constraint firstItem="jPz-48-S2b" firstAttribute="centerX" secondItem="Pid-um-oJ2" secondAttribute="centerX" id="Hp9-0Q-3QV"/>
+                            <constraint firstItem="Tq0-sp-2eR" firstAttribute="top" secondItem="Pid-um-oJ2" secondAttribute="bottom" id="8bf-oM-ARA"/>
                             <constraint firstItem="Pid-um-oJ2" firstAttribute="centerY" secondItem="Y3H-jh-cAK" secondAttribute="centerY" id="Ibh-oz-Fto"/>
                             <constraint firstAttribute="trailing" secondItem="Y3H-jh-cAK" secondAttribute="trailing" id="Je5-Lp-pr2"/>
+                            <constraint firstItem="Tq0-sp-2eR" firstAttribute="centerX" secondItem="Pid-um-oJ2" secondAttribute="centerX" id="MVn-1l-RVM"/>
                             <constraint firstItem="Y3H-jh-cAK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VKR-ee-AgD"/>
                             <constraint firstItem="Y3H-jh-cAK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YCM-TL-Q2c"/>
                             <constraint firstItem="Y3H-jh-cAK" firstAttribute="centerX" secondItem="Pid-um-oJ2" secondAttribute="centerX" id="ixq-4g-jze"/>
-                            <constraint firstItem="jPz-48-S2b" firstAttribute="top" secondItem="Pid-um-oJ2" secondAttribute="bottom" id="n7w-db-2gu"/>
                             <constraint firstItem="Pid-um-oJ2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="owf-g6-Qzm"/>
                         </constraints>
                     </view>
@@ -147,7 +151,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Concluir" id="LE2-3h-2Ll">
                             <connections>
                                 <action selector="done:" destination="jfP-RZ-j0N" id="l4g-4w-Cog"/>
-                                <segue destination="oaa-GJ-bHG" kind="show" id="ReC-eD-3Nu"/>
+                                <segue destination="oaa-GJ-bHG" kind="show" identifier="showImage" id="ReC-eD-3Nu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

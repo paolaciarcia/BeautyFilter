@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import PhotosUI
 
 class EntryViewController: UIViewController {
 
